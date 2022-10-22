@@ -59,8 +59,9 @@ func _on_go_to_prev_scene():
 	for scene in current_scene.get_children():
 		scene.queue_free()
 
-	var scene_child = SceneManager.previous_scene.instance()
+	var scene_child = SceneManager.previous_scene[-1].instance()
 	current_scene.add_child(scene_child)
 	
 	
 	_transition_to_prev_scene()
+	SceneManager.previous_scene.pop_back()

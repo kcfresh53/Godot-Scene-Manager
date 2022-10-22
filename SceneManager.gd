@@ -2,7 +2,7 @@
 extends Node
 
 var next_scene
-var previous_scene
+var previous_scene = []
 
 
 # warning-ignore:unused_signal
@@ -18,5 +18,5 @@ func _ready():
 
 func _on_go_to_next_scene(nx_scene, prev_scene):
 	next_scene = nx_scene
-	previous_scene = prev_scene
+	previous_scene.append(prev_scene)
 
