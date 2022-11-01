@@ -23,7 +23,10 @@ func _ready():
 func _notification(what):
 	# When the android back button is pressed, go to the previous scene
 	if what == MainLoop.NOTIFICATION_WM_GO_BACK_REQUEST:
-		emit_signal("go_to_prev_scene")
+		if previous_scene.empty() == false:
+			emit_signal("go_to_prev_scene")
+		else:
+			get_tree().quit()
 
 
 
